@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, Briefcase } from 'lucide-react';
+import Image from 'next/image';
 
 const team = [
   {
@@ -21,6 +22,7 @@ const team = [
     name: 'Adaezechukwu Benita Azaka',
     role: 'Chief Operating Officer',
     initials: 'ABA',
+    image: '/images/Benita.jpeg',
     color: 'border-[#5A5A54]/20 text-[#18181A]',
     bio: [
       'Adaezechukwu Benita Azaka serves as the Chief Operating Officer of KHA-RIZ ENERGY LTD, where she oversees corporate operations, project execution, strategic partnerships and business development.',
@@ -44,6 +46,7 @@ const team = [
     name: 'Obunaonye Chidozie Ndubuisi',
     role: 'Operations Manager',
     initials: 'OCN',
+    image: '/images/Dozie.jpeg',
     color: 'border-[#5A5A54]/20 text-[#18181A]',
     bio: [
       'Obunaonye Chidozie Ndubuisi serves as the Operations Manager of KHA-RIZ ENERGY LTD, where he leads the planning, coordination and execution of the company’s operational activities across engineering, renewable energy, procurement and project delivery.',
@@ -67,6 +70,7 @@ const team = [
     name: 'Nkem Anthonia',
     role: 'Human Resources Manager',
     initials: 'NA',
+    image: '/images/Nkem.jpeg',
     color: 'border-[#5A5A54]/20 text-[#18181A]',
     bio: [
       'Nkem Anthonia serves as the Human Resources Manager of KHA-RIZ ENERGY LTD, providing leadership for the company’s human capital strategy and workforce development.',
@@ -107,9 +111,18 @@ export default function Leadership() {
               className="p-5 md:p-6 rounded-sm ring-1 ring-[#5A5A54]/15 bg-[#E2DFD4]/25 flex flex-col justify-between items-center text-center shadow-sm relative group hover:bg-[#E2DFD4]/50 transition-all duration-300"
             >
               <div className="flex flex-col items-center">
-                {/* Portrait Placeholder Emblem */}
-                <div className="w-14 h-14 rounded-full border border-[#5A5A54]/30 bg-[#ECEAE0] flex items-center justify-center font-mono font-bold text-xs tracking-widest text-[#18181A] mb-4 shadow-inner">
-                  {member.initials}
+                {/* Portrait Placeholder Emblem or Image */}
+                <div className="w-14 h-14 rounded-full border border-[#5A5A54]/30 bg-[#ECEAE0] flex items-center justify-center font-mono font-bold text-xs tracking-widest text-[#18181A] mb-4 shadow-inner relative overflow-hidden">
+                  {member.image ? (
+                    <Image
+                      src={member.image}
+                      alt={member.name}
+                      fill
+                      className="object-cover"
+                    />
+                  ) : (
+                    member.initials
+                  )}
                 </div>
 
                 <h3 className="font-serif text-base text-[#18181A] mb-1">
@@ -164,8 +177,17 @@ export default function Leadership() {
               </button>
 
               <div className="flex flex-col sm:flex-row items-center sm:items-start gap-6 border-b border-[#5A5A54]/15 pb-8 mb-8">
-                <div className="w-16 h-16 rounded-full border border-[#5A5A54]/30 bg-[#E2DFD4] flex items-center justify-center font-mono font-bold text-xs tracking-widest text-[#18181A]">
-                  {team[activeLeaderIndex].initials}
+                <div className="w-16 h-16 rounded-full border border-[#5A5A54]/30 bg-[#E2DFD4] flex items-center justify-center font-mono font-bold text-xs tracking-widest text-[#18181A] relative overflow-hidden">
+                  {team[activeLeaderIndex].image ? (
+                    <Image
+                      src={team[activeLeaderIndex].image}
+                      alt={team[activeLeaderIndex].name}
+                      fill
+                      className="object-cover"
+                    />
+                  ) : (
+                    team[activeLeaderIndex].initials
+                  )}
                 </div>
 
                 <div className="text-center sm:text-left">
