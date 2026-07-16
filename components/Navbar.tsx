@@ -55,11 +55,46 @@ export default function Navbar() {
         } ${textColor}`}
       >
         {/* Logo */}
-        <a href="#home" className="flex items-center gap-2 transition-opacity hover:opacity-75">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M13 2L3 14H12L11 22L21 10H12L13 2Z" fill="currentColor" opacity="0.85"/>
+        <a href="#home" className="flex items-center gap-2.5 group">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="transition-transform duration-300 group-hover:scale-105">
+            {/* Architectural vertical pillar */}
+            <motion.path
+              initial={{ scaleY: 0, originY: 0 }}
+              animate={{ scaleY: 1 }}
+              transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
+              d="M4 3h2.5v18H4z"
+              fill="currentColor"
+              className="opacity-90"
+            />
+            {/* Energy core node in negative space */}
+            <motion.circle
+              initial={{ scale: 0 }}
+              animate={{ scale: [0, 1.2, 1] }}
+              transition={{ duration: 0.6, ease: 'easeOut', delay: 0.8 }}
+              cx="7.75"
+              cy="12"
+              r="1"
+              fill="currentColor"
+              className="opacity-75"
+            />
+            {/* Solar ray / upper diagonal */}
+            <motion.path
+              initial={{ pathLength: 0, opacity: 0 }}
+              animate={{ pathLength: 1, opacity: 0.9 }}
+              transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: 0.4 }}
+              d="M9 11.5L17.5 3H20L11.5 11.5z"
+              fill="currentColor"
+            />
+            {/* Mobility flow / lower diagonal */}
+            <motion.path
+              initial={{ pathLength: 0, opacity: 0 }}
+              animate={{ pathLength: 1, opacity: 0.9 }}
+              transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: 0.6 }}
+              d="M11.5 12.5L20 21h-2.5L9 12.5z"
+              fill="currentColor"
+            />
           </svg>
-          <span className="font-mono text-[10px] tracking-[0.15em] font-bold">
+          <span className="font-mono text-[10px] tracking-[0.18em] font-bold">
             KHA-RIZ
           </span>
         </a>
