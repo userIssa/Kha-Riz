@@ -22,7 +22,7 @@ const team = [
     name: 'Adaezechukwu Benita Azaka',
     role: 'Chief Operating Officer',
     initials: 'ABA',
-    image: '/images/Benita.jpeg',
+    image: '/images/Benita.png',
     color: 'border-[#5A5A54]/20 text-[#18181A]',
     bio: [
       'Adaezechukwu Benita Azaka serves as the Chief Operating Officer of KHA-RIZ ENERGY LTD, where she oversees corporate operations, project execution, strategic partnerships and business development.',
@@ -46,7 +46,7 @@ const team = [
     name: 'Obunaonye Chidozie Ndubuisi',
     role: 'Operations Manager',
     initials: 'OCN',
-    image: '/images/Dozie.jpeg',
+    image: '/images/Dozie.png',
     color: 'border-[#5A5A54]/20 text-[#18181A]',
     bio: [
       'Obunaonye Chidozie Ndubuisi serves as the Operations Manager of KHA-RIZ ENERGY LTD, where he leads the planning, coordination and execution of the company’s operational activities across engineering, renewable energy, procurement and project delivery.',
@@ -70,7 +70,7 @@ const team = [
     name: 'Nkem Anthonia',
     role: 'Human Resources Manager',
     initials: 'NA',
-    image: '/images/Nkem.jpeg',
+    image: '/images/Nkem.png',
     color: 'border-[#5A5A54]/20 text-[#18181A]',
     bio: [
       'Nkem Anthonia serves as the Human Resources Manager of KHA-RIZ ENERGY LTD, providing leadership for the company’s human capital strategy and workforce development.',
