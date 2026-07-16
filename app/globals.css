@@ -1,0 +1,68 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: var(--font-serif-var), 'Playfair Display', Georgia, serif;
+  --font-mono: var(--font-mono-var), 'Space Mono', 'Courier New', monospace;
+  
+  --color-cream: #ECEAE0;
+  --color-cream-dark: #E2DFD4;
+  --color-dark: #18181A;
+  --color-mid: #5A5A54;
+  --color-light-text: #9A9A90;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #18181A;
+  color: #ECEAE0;
+  overflow-x: hidden;
+  font-family: var(--font-mono);
+}
+
+/* Custom Scrollbar matching Serenite */
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  background: #ECEAE0;
+}
+::-webkit-scrollbar-thumb {
+  background: #5A5A54;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #18181A;
+}
+
+/* Spinning indicators */
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 14s linear infinite;
+}
+
+/* Custom layouts matching editorial style */
+.editorial-border {
+  border: 1px solid rgba(90, 90, 84, 0.15);
+}
+
+.section-padding-editorial {
+  padding-top: 8rem;
+  padding-bottom: 8rem;
+}
+
+/* Scroll reveals */
+.fade-up-init {
+  opacity: 0;
+  transform: translateY(20px);
+}
