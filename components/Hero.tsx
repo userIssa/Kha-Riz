@@ -26,12 +26,14 @@ export default function Hero() {
   return (
     <section ref={ref} id="home" className="relative w-full h-screen overflow-hidden bg-[#18181A]">
       {/* Parallax background */}
-      <motion.div style={{ y: imgY, filter: 'blur(1px) brightness(0.55)' }} className="absolute inset-0 scale-110">
+      <motion.div style={{ y: imgY, filter: 'brightness(0.35) contrast(1.1)' }} className="absolute inset-0 scale-105">
         <Image
           src="/images/WhatsApp Image 2026-07-15 at 9.57.31 AM (2).jpeg"
           alt="KHA-RIZ ENERGY solar installation"
           fill
           priority
+          quality={100}
+          unoptimized
           className="object-cover object-center"
         />
         {/* Subtle vignette */}
