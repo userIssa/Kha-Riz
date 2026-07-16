@@ -38,7 +38,7 @@ export default function MobilityHub() {
         {/* Section Header */}
         <div className="max-w-3xl mb-16">
           <p className="font-mono text-[9px] tracking-[0.25em] text-[#9A9A90] mb-8">
-            ELECTRIC MOBILITY <span className="mx-2">•</span> 03 / 06
+            ELECTRIC MOBILITY <span className="mx-2"></span>    
           </p>
           <h2 className="font-serif text-[clamp(36px,5vw,64px)] leading-[1.08] mb-8">
             Electric Mobility Solutions
@@ -61,10 +61,7 @@ export default function MobilityHub() {
               
               <div className="space-y-4">
                 {evCategories.map((cat, idx) => (
-                  <div key={idx} className="flex gap-4 p-3 rounded-sm hover:bg-[#E2DFD4]/50 transition-colors">
-                    <span className="font-mono text-[10px] font-bold text-[#18181A] bg-[#ECEAE0] w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 border border-[#5A5A54]/20">
-                      0{idx + 1}
-                    </span>
+                  <div key={idx} className="p-3 rounded-sm hover:bg-[#E2DFD4]/50 transition-colors">
                     <div>
                       <h4 className="font-mono text-[10px] font-bold text-[#18181A] mb-0.5">{cat.name}</h4>
                       <p className="font-mono text-[9px] text-[#5A5A54] leading-relaxed">{cat.desc}</p>

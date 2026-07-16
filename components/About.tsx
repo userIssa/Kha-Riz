@@ -51,7 +51,7 @@ export default function About() {
               custom={0}
               className="font-mono text-[9px] tracking-[0.25em] text-[#9A9A90] mb-8"
             >
-              ABOUT US <span className="mx-2">•</span> 01 / 06
+              ABOUT US <span className="mx-2"></span>
             </motion.p>
 
             {/* Headline */}
@@ -154,7 +154,7 @@ export default function About() {
               {values.map((v, i) => (
                 <div key={i} className="p-6 rounded-sm ring-1 ring-[#5A5A54]/15 bg-[#E2DFD4]/20">
                   <h4 className="font-mono text-[11px] tracking-[0.15em] font-bold text-[#18181A] uppercase mb-2">
-                    {i+1}. {v.name}
+                    {v.name}
                   </h4>
                   <p className="font-mono text-[10px] tracking-[0.05em] text-[#5A5A54] leading-relaxed">
                     {v.desc}

@@ -63,7 +63,7 @@ export default function Contact() {
         {/* Let's build the future together block */}
         <div className="max-w-3xl mb-16">
           <p className="font-mono text-[9px] tracking-[0.25em] text-[#9A9A90] mb-8">
-            PARTNER WITH US <span className="mx-2">•</span> 06 / 06
+            PARTNER WITH US <span className="mx-2"></span>
           </p>
           <h2 className="font-serif text-[clamp(36px,5vw,64px)] leading-[1.08] mb-8">
             Let’s Build the Future <br />
@@ -273,13 +273,7 @@ export default function Contact() {
                   </p>
                 </div>
 
-                {/* 5. Web */}
-                <div>
-                  <h4 className="font-extrabold text-[#9A9A90] uppercase tracking-widest mb-1.5">Website</h4>
-                  <p className="text-[#ECEAE0] hover:text-[#9A9A90] transition-colors leading-relaxed">
-                    <a href="http://www.kharizenergy.com" target="_blank" rel="noopener noreferrer">www.kharizenergy.com</a>
-                  </p>
-                </div>
+
               </div>
 
             </div>

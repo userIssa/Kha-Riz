@@ -144,7 +144,7 @@ export default function SolutionsHub() {
         {/* Section Header */}
         <div className="max-w-3xl mb-16">
           <p className="font-mono text-[9px] tracking-[0.25em] text-[#9A9A90] mb-8">
-            OUR CAPABILITIES <span className="mx-2">•</span> 02 / 06
+            OUR CAPABILITIES <span className="mx-2"></span>
           </p>
           <h2 className="font-serif text-[clamp(36px,5vw,64px)] leading-[1.08] mb-8">
             Integrated Energy Solutions.
