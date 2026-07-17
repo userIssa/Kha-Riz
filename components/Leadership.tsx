@@ -10,6 +10,7 @@ const team = [
     name: 'Obichukwu Mike Tumunuya',
     role: 'Managing Director / Chief Executive Officer',
     initials: 'OMT',
+    image: '/images/Mike.jpeg',
     color: 'border-[#5A5A54]/20 text-[#18181A]',
     bio: [
       'Obichukwu Mike Tumunuya is the Managing Director and Chief Executive Officer of KHA-RIZ ENERGY LTD, providing strategic leadership for the company’s growth and operations across renewable energy, engineering, procurement, sustainable infrastructure and integrated energy solutions.',
@@ -35,6 +36,7 @@ const team = [
     name: 'Nwokoye George',
     role: 'General Manager',
     initials: 'NG',
+    image: '/images/George.jpeg',
     color: 'border-[#5A5A54]/20 text-[#18181A]',
     bio: [
       'Nwokoye George is the General Manager of KHA-RIZ ENERGY LTD, responsible for overseeing business operations, coordinating project delivery and ensuring organisational performance aligns with the company’s strategic objectives.',
