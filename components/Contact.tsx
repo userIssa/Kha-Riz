@@ -62,15 +62,15 @@ export default function Contact() {
         
         {/* Let's build the future together block */}
         <div className="max-w-3xl mb-16">
-          <p className="font-mono text-[9px] tracking-[0.25em] text-[#9A9A90] mb-8">
-            PARTNER WITH US <span className="mx-2"></span>
+          <p className="font-mono text-[9px] tracking-[0.25em] text-[#9A9A90] mb-8 uppercase">
+            CALL TO ACTION
           </p>
           <h2 className="font-serif text-[clamp(36px,5vw,64px)] leading-[1.08] mb-8">
-            Let’s Build the Future <br />
-            of Energy Together
+            Let’s Build a Smarter <br />
+            Energy Future Together
           </h2>
           <p className="font-mono text-[11px] tracking-[0.06em] text-[#9A9A90] leading-[2]">
-            Whether you are planning a renewable energy project, modernising existing infrastructure, deploying electric mobility solutions or pursuing long-term decarbonisation goals, our team is ready to partner with you every step of the way.
+            Whether you’re planning a renewable energy project, transitioning your fleet to electric vehicles or developing critical infrastructure, KHA-RIZ ENERGY is ready to deliver solutions that power sustainable growth.
           </p>
         </div>
 

@@ -4,7 +4,7 @@ import { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import Image from 'next/image';
 
-const headline = ['Engineering', 'the Future'];
+const headline = ['Engineering Sustainable Energy.', 'Empowering Smarter Businesses.'];
 
 export default function Hero() {
   const ref = useRef<HTMLElement>(null);
@@ -26,18 +26,17 @@ export default function Hero() {
   return (
     <section ref={ref} id="home" className="relative w-full h-screen overflow-hidden bg-[#18181A]">
       {/* Parallax background */}
-      <motion.div style={{ y: imgY, filter: 'brightness(0.35) contrast(1.1)' }} className="absolute inset-0 scale-105">
+      <motion.div style={{ y: imgY, filter: 'brightness(0.55) contrast(1.05)' }} className="absolute inset-0 scale-105">
         <Image
-          src="/images/WhatsApp Image 2026-07-15 at 9.57.31 AM (2).jpeg"
-          alt="KHA-RIZ ENERGY solar installation"
+          src="/images/hero_ai.png"
+          alt="KHA-RIZ ENERGY sustainable energy plant and EV hub"
           fill
           priority
-          quality={100}
           unoptimized
           className="object-cover object-center"
         />
         {/* Subtle vignette */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/25 via-transparent to-black/45" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/60" />
       </motion.div>
 
       {/* Floating animation overlay */}
@@ -50,11 +49,11 @@ export default function Hero() {
       {/* Content */}
       <motion.div
         style={{ y: contentY, opacity }}
-        className="absolute bottom-28 md:bottom-36 left-10 md:left-16 z-10"
+        className="absolute bottom-24 md:bottom-32 left-8 md:left-16 right-8 md:right-auto z-10 max-w-4xl"
       >
-        <h1 className="font-serif leading-[1.2]">
+        <h1 className="font-serif leading-[1.15]">
           {headline.map((line, li) => (
-            <span key={li} className="block overflow-hidden pt-2.5 pb-0.5">
+            <span key={li} className="block overflow-hidden pt-1.5 pb-0.5">
               {line.split(' ').map((word, wi) => (
                 <motion.span
                   key={wi}
@@ -62,28 +61,15 @@ export default function Hero() {
                   variants={wordVariants}
                   initial="hidden"
                   animate="visible"
-                  className={`inline-block mr-4 ${
+                  className={`inline-block mr-3 ${
                     li === 0
-                      ? 'text-[clamp(44px,7.5vw,96px)] text-[#ECEAE0]'
-                      : 'text-[clamp(44px,7.5vw,96px)] text-[#ECEAE0]/60'
+                      ? 'text-[clamp(32px,5vw,68px)] text-[#ECEAE0]'
+                      : 'text-[clamp(32px,5vw,68px)] text-[#ECEAE0]/75'
                   }`}
                 >
                   {word}
                 </motion.span>
               ))}
-              {li === 1 && (
-                <motion.span
-                  custom={6}
-                  variants={wordVariants}
-                  initial="hidden"
-                  animate="visible"
-                  className="inline-block align-middle mr-4 text-[clamp(32px,5vw,64px)] text-[#ECEAE0]/60"
-                >
-                  <span className="inline-block animate-spin-slow">
-                    ⊕
-                  </span>
-                </motion.span>
-              )}
             </span>
           ))}
         </h1>
@@ -92,10 +78,10 @@ export default function Hero() {
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1.2, duration: 0.8 }}
-          className="font-mono text-[9px] tracking-[0.25em] text-[#ECEAE0]/80 mt-4 uppercase font-bold"
+          transition={{ delay: 1.0, duration: 0.8 }}
+          className="font-mono text-[11px] md:text-[13px] tracking-[0.04em] text-[#ECEAE0]/90 mt-6 leading-[1.8] max-w-2xl"
         >
-          KHA-RIZ ENERGY LTD • CORPORATE CAPABILITY STATEMENT
+          KHA-RIZ ENERGY LTD delivers innovative renewable energy, engineering, electric mobility and EPC solutions that help businesses reduce operating costs, improve energy reliability and accelerate their transition to a cleaner, more sustainable future.
         </motion.p>
       </motion.div>
 
@@ -104,19 +90,19 @@ export default function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.4, duration: 0.8 }}
-        className="absolute bottom-12 right-10 md:right-16 z-10 flex gap-3"
+        className="absolute bottom-8 right-8 md:right-16 z-10 flex flex-wrap gap-3"
       >
         <a
-          href="#solutions"
-          className="font-mono text-[9px] tracking-[0.12em] font-bold px-5 py-3 rounded-full bg-black/25 text-white border border-white/20 backdrop-blur-md hover:bg-black/40 hover:border-white/40 hover:scale-105 transition-all"
+          href="#contact"
+          className="font-mono text-[9px] tracking-[0.12em] font-bold px-6 py-3.5 rounded-full bg-[#ECEAE0] text-[#18181A] hover:bg-white hover:scale-105 transition-all shadow-lg"
         >
-          EXPLORE SOLUTIONS
+          REQUEST A CONSULTATION
         </a>
         <a
-          href="#contact"
-          className="font-mono text-[9px] tracking-[0.12em] font-bold px-5 py-3 rounded-full bg-[#ECEAE0] text-[#18181A] hover:bg-white hover:scale-105 transition-all"
+          href="#solutions"
+          className="font-mono text-[9px] tracking-[0.12em] font-bold px-6 py-3.5 rounded-full bg-black/40 text-white border border-white/20 backdrop-blur-md hover:bg-black/60 hover:border-white/40 hover:scale-105 transition-all"
         >
-          × PARTNER WITH US
+          EXPLORE OUR SOLUTIONS
         </a>
       </motion.div>
 

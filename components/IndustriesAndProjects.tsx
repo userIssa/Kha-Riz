@@ -67,6 +67,17 @@ const galleryImages = [
   { src: '/images/WhatsApp Image 2026-07-15 at 9.57.33 AM (1).jpeg', title: 'Client Infrastructure Handover' }
 ];
 
+const deliverySteps = [
+  { step: '01', title: 'Consultation & Site Assessment', desc: 'Initial technical consultation and detailed site evaluation to understand operational constraints.' },
+  { step: '02', title: 'Energy Audit & Load Analysis', desc: 'Comprehensive load profiling and power consumption analysis to establish exact energy baselines.' },
+  { step: '03', title: 'Engineering Design', desc: 'Custom system design, electrical schematics, structural engineering, and equipment sizing.' },
+  { step: '04', title: 'Procurement', desc: 'Direct sourcing of tier-1 OEM equipment, solar panels, inverters, BESS, and balance of plant.' },
+  { step: '05', title: 'Installation', desc: 'Professional civil, structural, and electrical installation executed by certified engineers.' },
+  { step: '06', title: 'Testing & Commissioning', desc: 'Rigorous safety validation, grid synchronization, load testing, and system handover.' },
+  { step: '07', title: 'Performance Monitoring', desc: 'Real-time telemetry, remote monitoring, and telemetry optimization for ongoing efficiency.' },
+  { step: '08', title: 'Operations & Maintenance', desc: 'Lifecycle asset management, scheduled preventive maintenance, and rapid technical support.' }
+];
+
 export default function IndustriesAndProjects() {
   const [activeImageIndex, setActiveImageIndex] = useState<number | null>(null);
 
@@ -92,14 +103,14 @@ export default function IndustriesAndProjects() {
         {/* INDUSTRIES SECTION */}
         <div className="mb-24">
           <div className="max-w-3xl mb-16">
-            <p className="font-mono text-[9px] tracking-[0.25em] text-[#9A9A90] mb-8">
-              SECTORS WE SERVE <span className="mx-2"></span>
+            <p className="font-mono text-[9px] tracking-[0.25em] text-[#9A9A90] mb-8 uppercase">
+              INDUSTRIES WE SERVE
             </p>
             <h2 className="font-serif text-[clamp(36px,5vw,64px)] leading-[1.08] mb-8">
-              Critical Industries We Support
+              Trusted Across Critical Industries
             </h2>
             <p className="font-mono text-[11px] tracking-[0.06em] text-[#5A5A54] leading-[2]">
-              Energy requirements differ across industries. Our multidisciplinary expertise enables us to develop tailored solutions that respond to the operational realities, regulatory requirements, and business priorities of each sector.
+              Our solutions support organizations operating in demanding sectors where reliability, efficiency and operational continuity are essential.
             </p>
           </div>
 
@@ -119,6 +130,31 @@ export default function IndustriesAndProjects() {
                     <p className="font-mono text-[9px] text-[#5A5A54] leading-relaxed border-t border-[#5A5A54]/10 pt-2">{sec.desc}</p>
                   </div>
                 </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* OUR PROJECT DELIVERY PROCESS */}
+        <div className="mb-24 border-t border-[#5A5A54]/15 pt-16">
+          <div className="max-w-3xl mb-16">
+            <p className="font-mono text-[9px] tracking-[0.25em] text-[#9A9A90] mb-8 uppercase">
+              OUR METHODOLOGY
+            </p>
+            <h2 className="font-serif text-[clamp(32px,4.5vw,56px)] leading-[1.08] mb-6">
+              From Concept to Completion
+            </h2>
+            <p className="font-mono text-[11px] tracking-[0.06em] text-[#5A5A54] leading-[2]">
+              Every project follows a structured engineering methodology that ensures quality, transparency and successful delivery.
+            </p>
+          </div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {deliverySteps.map((s) => (
+              <div key={s.step} className="p-6 rounded-sm ring-1 ring-[#5A5A54]/15 bg-[#E2DFD4]/25 hover:bg-[#E2DFD4]/45 transition-colors">
+                <span className="font-mono text-[10px] font-bold text-[#9A9A90] block mb-2">{s.step}</span>
+                <h4 className="font-serif text-lg text-[#18181A] mb-2">{s.title}</h4>
+                <p className="font-mono text-[9px] text-[#5A5A54] leading-relaxed">{s.desc}</p>
               </div>
             ))}
           </div>
