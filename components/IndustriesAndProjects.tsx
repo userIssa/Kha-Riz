@@ -80,6 +80,11 @@ const deliverySteps = [
 
 export default function IndustriesAndProjects() {
   const [activeImageIndex, setActiveImageIndex] = useState<number | null>(null);
+  const [expandedSector, setExpandedSector] = useState<number | null>(null);
+
+  const toggleSector = (index: number) => {
+    setExpandedSector(expandedSector === index ? null : index);
+  };
 
   const openLightbox = (index: number) => setActiveImageIndex(index);
   const closeLightbox = () => setActiveImageIndex(null);
@@ -115,23 +120,31 @@ export default function IndustriesAndProjects() {
           </div>
 
           {/* Sectors grid */}
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {sectors.map((sec, idx) => (
-              <div 
-                key={idx} 
-                className="p-4 rounded-sm ring-1 ring-[#5A5A54]/15 bg-[#E2DFD4]/20 hover:bg-[#E2DFD4]/40 transition-all duration-300 group flex flex-col justify-center min-h-[56px] hover:min-h-[110px]"
-              >
-                <div>
-                  <div className="flex justify-between items-center w-full">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {sectors.map((sec, idx) => {
+              const isExpanded = expandedSector === idx;
+              return (
+                <button 
+                  key={idx}
+                  onClick={() => toggleSector(idx)}
+                  className={`w-full text-left p-4 rounded-sm ring-1 ring-[#5A5A54]/15 transition-all duration-300 group flex flex-col justify-between cursor-pointer ${
+                    isExpanded ? 'bg-[#E2DFD4]/60 ring-[#18181A]/30' : 'bg-[#E2DFD4]/20 hover:bg-[#E2DFD4]/40'
+                  }`}
+                >
+                  <div className="flex justify-between items-center w-full gap-2">
                     <h4 className="font-mono text-[10px] font-bold text-[#18181A] uppercase">{sec.name}</h4>
-                    <span className="font-mono text-[9px] text-[#9A9A90] group-hover:rotate-45 transition-transform duration-300">＋</span>
+                    <span className={`font-mono text-[11px] text-[#9A9A90] transition-transform duration-300 flex-shrink-0 ${
+                      isExpanded ? 'rotate-45 text-[#18181A]' : 'group-hover:rotate-45'
+                    }`}>＋</span>
                   </div>
-                  <div className="h-0 opacity-0 overflow-hidden group-hover:h-auto group-hover:opacity-100 group-hover:mt-3 transition-all duration-300">
-                    <p className="font-mono text-[9px] text-[#5A5A54] leading-relaxed border-t border-[#5A5A54]/10 pt-2">{sec.desc}</p>
+                  <div className={`transition-all duration-300 overflow-hidden ${
+                    isExpanded ? 'max-h-40 opacity-100 mt-3' : 'max-h-0 sm:group-hover:max-h-40 opacity-0 sm:group-hover:opacity-100 sm:group-hover:mt-3'
+                  }`}>
+                    <p className="font-mono text-[9px] text-[#5A5A54] leading-relaxed border-t border-[#5A5A54]/15 pt-2">{sec.desc}</p>
                   </div>
-                </div>
-              </div>
-            ))}
+                </button>
+              );
+            })}
           </div>
         </div>
 
@@ -215,7 +228,7 @@ export default function IndustriesAndProjects() {
           </div>
 
           {/* Photo Grid */}
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
             {galleryImages.map((img, index) => (
               <motion.div
                 key={index}
@@ -228,7 +241,7 @@ export default function IndustriesAndProjects() {
                   alt={img.title}
                   className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#18181A] via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-4">
+                <div className="absolute inset-0 bg-gradient-to-t from-[#18181A]/90 via-transparent to-transparent opacity-100 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity flex flex-col justify-end p-4">
                   <p className="font-mono text-[8px] text-[#ECEAE0]/60 uppercase tracking-widest font-bold mb-0.5">Project View</p>
                   <p className="font-mono text-[9px] font-bold text-[#ECEAE0] truncate">{img.title}</p>
                 </div>
